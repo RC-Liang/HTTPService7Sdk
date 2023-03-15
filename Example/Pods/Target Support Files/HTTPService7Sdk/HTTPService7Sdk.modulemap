@@ -1,6 +1,0 @@
-framework module HTTPService7Sdk {
-  umbrella header "HTTPService7Sdk-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,6 +1,0 @@
-framework module Pods_HTTPService7Sdk_Example {
-  umbrella header "Pods-HTTPService7Sdk_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}

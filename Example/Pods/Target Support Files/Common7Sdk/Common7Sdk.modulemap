@@ -1,6 +1,0 @@
-framework module Common7Sdk {
-  umbrella header "Common7Sdk-umbrella.h"
-
-  export *
-  module * { export * }
-}
