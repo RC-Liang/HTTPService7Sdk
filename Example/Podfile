@@ -6,7 +6,7 @@ inhibit_all_warnings!
 
 target 'HTTPService7Sdk_Example' do
   pod 'HTTPService7Sdk', :path => '../'
-  pod 'Common7Sdk', :path => '../../Common7Sdk/Common7Sdk.podspec'
+  #pod 'Common7Sdk', :path => '../../Common7Sdk/Common7Sdk.podspec'
 
   target 'HTTPService7Sdk_Tests' do
     inherit! :search_paths

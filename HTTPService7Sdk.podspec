@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/gogopaly@163.com/HTTPService7Sdk.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
   s.swift_version = '5.0'
 
   s.source_files = 'HTTPService7Sdk/Classes/**/*'
@@ -40,7 +40,6 @@ TODO: Add long description of the pod here.
       rxh.dependency 'HandyJSON'
       rxh.dependency 'MBProgressHUD'
       rxh.dependency 'SSZipArchive'
-      rxh.dependency 'Common7Sdk'
   end
   
   s.subspec 'HTTPService' do |h|
@@ -49,14 +48,7 @@ TODO: Add long description of the pod here.
       h.dependency 'RxCocoa'
       h.dependency 'Moya'
       h.dependency 'HandyJSON'
+      h.dependency 'MBProgressHUD'
   end
-  
-  # s.resource_bundles = {
-  #   'HTTPService7Sdk' => ['HTTPService7Sdk/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'Moya/RxSwift'
   
 end

@@ -2,7 +2,7 @@ import Alamofire
 import HandyJSON
 import Moya
 import RxSwift
-import Common7Sdk
+// import Common7Sdk
 
 struct HTTPService {
    
@@ -77,19 +77,20 @@ struct HTTPService {
                             case .sessionTaskFailed(URLError.timedOut):
                                 // 超时
                                 if target.showErrorMsg {
-                                    UIKitCommon.showText("请求超时，请检查网络")
+                                    
+                                    Hud.showText("请求超时，请检查网络")
                                 }
                                 result(.failure(.timeout))
                             case .sessionTaskFailed(URLError.notConnectedToInternet):
                                 if target.showErrorMsg {
-                                    UIKitCommon.showText("无连接网络，请检查当前网络")
+                                    Hud.showText("无连接网络，请检查当前网络")
                                 }
                                 result(.failure(.timeout))
                             default:
                                 // TODO: 后期做为可配置
                                 /// 展示错误信息
                                 if target.showErrorMsg {
-                                    UIKitCommon.showText("服务器错误, 请稍后重试")
+                                    Hud.showText("服务器错误, 请稍后重试")
                                 }
                                 result(.failure(.internalError))
                             }
@@ -136,7 +137,7 @@ struct HTTPService {
 
                     // TODO: 后期做为可配置
                     /// 展示错误信息
-                    UIKitCommon.showText(element.message)
+                    Hud.showText(element.message)
                     ErrorObservable.onNext(requestError)
                     result(.failure(.requestError))
                 }
@@ -150,14 +151,14 @@ struct HTTPService {
                             case .sessionTaskFailed(URLError.timedOut):
                                 // 超时
                                 if target.showErrorMsg {
-                                    UIKitCommon.showText("请求超时，请检查网络")
+                                    Hud.showText("请求超时，请检查网络")
                                 }
                                 result(.failure(.timeout))
                             default:
                                 // TODO: 后期做为可配置
                                 /// 展示错误信息
                                 if target.showErrorMsg {
-                                    UIKitCommon.showText("服务器错误, 请稍后重试")
+                                    Hud.showText("服务器错误, 请稍后重试")
                                 }
                                 result(.failure(.internalError))
                             }
@@ -214,11 +215,11 @@ extension HTTPService {
                 switch change {
                 case .began:
                     if tnTarget.showLoading {
-                         UIKitCommon.showLoading()
+                        Hud.showLoading()
                     }
                 case .ended:
                     if tnTarget.showLoading {
-                         UIKitCommon.hide()
+                        Hud.hide()
                     }
                 }
             }
